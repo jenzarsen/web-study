@@ -1,0 +1,23 @@
+h1{
+    
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+body{
+    background-color: black;
+}
+
+#daenerys{
+    border: 5px solid white;
+    width: 100%;
+}
+
+#div-1{
+    margin-top : 10%;
+    width: 50%;
+    margin-left: 25%;
+    font-family: "Libre Baskerville", serif;
+    color:white;
+    text-align: center;
+}

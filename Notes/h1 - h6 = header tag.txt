@@ -1,0 +1,545 @@
+<h1> - <h6> = header tag
+<p> = paragraph
+<hr /> = Horizontal Rule for making line separators
+<br /> = Line Break
+
+<ul> = Unordered List / Bullet List
+<ol> = Ordered List / Numbered List
+<li> = List Item
+
+<a href = "website link"> = Anchor Element / Hyperlink
+
+<img src = "url link" alt ="Alternative text" /> = Image Element + Alternative Text
+
+../ = Root Folder / Up 1 Directory
+./ = Parent folder
+
+
+<!DOCTYPE html> = Doctype declaration for html version
+<html lang = "en"> = HTML Element
+<head> = Head Element used for meta
+<meta charset = "UTF-8"> = This allows emoticons
+<title> = Website title in tab bar
+<body> = Body of the website, all content for website is written here
+
+type ! in VS Code = boiler plate shortcut, Only works for .html files
+
+
+CSS Styles
+
+Inline = <html style = "background:blue"> </html>
+Internal = 
+
+<style>
+	html{
+		background: red;
+	}
+</style> 
+
+External:
+<link 
+	rel="stylesheet"
+	href="./styles.css"
+/>
+
+v- styles.css -v
+
+html{
+	background: green;
+}
+
+
+Use Cases
+
+Inline = Single Element
+Internal = Single Web Page
+External = Full Website
+
+
+Class Selector (For Many Elements)
+
+<h2 class="red-text>Red</h2>
+
+.red-text{
+	color:red;
+}
+
+ID Selector (For One Element)
+
+<h2 id ="main">Red </h2>
+
+#main{
+	color:red
+}
+
+Attribute Selector
+
+<p draggable ="true">Drag Me </p>
+
+//Sample Attribute Selector without value
+p[draggable]{
+	color:red
+}
+
+//Sample Attribute Selector with value
+p[draggable ="true"]{
+	color:red
+}
+
+Universal Selector (Select All)
+
+*{
+	color:red;
+}
+
+
+Font Size
+
+1 px = 1/96th inch = 0.26mm
+1 pth = 1/72nd inch = 0.35mm
+1 em = 100% of parent
+1 rem = 100% of root
+
+Font Weight
+bold - lighter - number
+normal - bolder - 100-900
+
+*Font weight can be set to lighter or bolder with value 100 - 900
+
+
+Font Family
+
+font-family: "Times New Roman", sans-serif
+
+*Note: Use a generic backup font when setting a font-family
+
+*You can copy embedded code in Google Fonts to use custom fonts.
+
+Text Align
+
+text-align: center
+
+Borders
+
+border: 10px solid black;
+border-top: 0px;
+
+border-width: 0px 10px 20px 30px; //Clockwise direction
+
+10px = thickness
+solid = style/ can be dashed or solid
+color = color of the border
+
+
+Padding - space inside the border
+
+padding: 20px;
+
+
+Margin - space outside the border
+
+margin: 10px;
+
+Content Division (HTML)
+<div> Content </div>
+
+
+CSS Specificity
+
+4. Position - The lower CSS Line will appear if style is applied on the same element.
+
+
+li {
+	color:red;
+	color:blue; //Blue will appear
+}
+
+3. Specificity - the more specific style will appear
+
+
+li {color: blue} - element - least priority
+.first-class {color:red;} - class
+li[draggable]{ color : purple; } - attribute
+#first-id {color : orange;} - id - highest priority
+
+
+2. Type - Least Priority <- External, Internal, Inline -> Highest Priority 
+
+1. Importance - Most important CSS Rule
+color : !important
+
+Combining CSS Selectors
+
+.inner-box p{
+	color:white;
+}
+
+
+Group
+
+selector, selector{
+	color : blueviolet;
+}
+
+Child -> Selects child 1 level below the parent
+
+selector > selector {
+	color: firebrick;
+}
+
+
+Descendant -> Selects the specified elements based on parent
+
+selector selector {
+	color : blue;
+}
+
+Chaining - Applies where ALL Selectors are true
+
+li.done{
+	color : seagreen;
+}
+
+
+CSS Positioning
+
+Static = Default
+Relative = Position relative to default position
+Absolute = Position Relative to nearest positioned ancestor or top left corner of webpage
+Fixed = Position relative to top left corner of browser
+
+Z - index = Order of hierarchy / higher value is on top
+
+CSS Display
+
+Block = Default block element, takes full width
+
+display : block;
+
+inline = makes the elements on a same line, Height and width can be set
+
+inline-block = allows to set height width, and elements on the same line
+
+none = any element on screen to disappear
+
+CSS Float - Makes the image wrap inline with a text
+
+img{
+	float:left;
+}
+
+footer{
+	clear: left;
+}
+
+Responsive Websites
+
+1. Media Queries
+
+@media (max-width : 600px){
+	/* CSS for Screens below or equal to 600px wide */
+}
+
+2. CSS Grid = For 2D layout, columns & rows
+
+1 fr 1fr
+
+3. CSS Flexbox = For Horizontal / Vertical Layout
+4. External Frameworks (ex. Bootstrap)
+
+
+Media Queries - overrides CSS Style
+
+@media (max-width:600px){
+	div{
+		height : 100px;
+		width : 100px;
+	}
+}
+
+
+Combination
+
+@media (min-width:600px) and (max-width:900px)
+
+
+Flex
+
+<div class ="container">
+	<div>...
+	<div>...
+	<div>...
+
+.container {
+	display : flex;
+	display : inline-flex; //alternate fits element
+	gap : 10px;
+}
+
+
+Flex Direction
+
+flex-direction : row;  //horizontal stack
+flex-direction : column; //vertical stack 
+flex-basis : 100px; //Sets sizes of element depending on direction (height for vertical, width for horizontal)
+
+.container > * { //* - Selects all children of container class
+	flex-basis: 100px;
+}
+
+
+Flexible Layout
+
+Flex Item Property:
+order : 0; //Sets the order of flex items
+
+Flex Container  Property:
+
+flex-wrap: wrap; //Will wrap the flex items to the next line 
+
+Justify - Sets the distribution of flex items horizontally
+
+justify-content : flex-start; //Flex items are justified left 
+
+justify-content : flex-end;//Flex items are justified right
+
+justify-content: center; //Flex items are justified center
+
+justify-content : space-between; //Flex items are justified with spaces in between items, first and last items are set to start and end
+
+
+Align - Sets the distribution of flex items vertically
+
+align-items : flex-start; //Sets items on the top
+align-items : flex-end; //Sets items on the bottom
+
+
+//Child
+align-self: center;
+
+
+//Works on flex-wrap: wrap; only
+align-content: center;
+
+Flex Sizing
+
+Priority
+
+Content Width < Width < flex-basis < min-width/max-width
+
+min-width - By default, Bases on the longest word in a paragraph
+
+max-width - By default, Based on the whole paragraph.
+
+flex-basis: auto; //Default Value
+flex-basis: 0; //Equal
+flex-grow: 0; //Disables element grow, Default is 0
+flex-shrink : 0; //Disables element shrink, Default is 1
+
+
+flex: grow shrink basis;
+flex: 1 1 0; //
+
+
+Grid
+
+.container{
+	display:grid;
+	grid-template-columns: 1fr 2fr // 1 : 2 Ratio
+	grid-template-rows: 1fr 1fr //1 : 1 Ratio
+	gap : 10px;
+}
+
+Grid Sizing
+
+grid-template: 100px 200px / 400px 800px;
+		rows		columns
+
+auto on row = fit content
+auto on column = 100% screen
+fr = fractional ratio
+
+minmax(400px, 800px)
+
+       iteration  size
+repeat(   2     , 200px)
+
+Auto Rows = Excess grid items size
+grid-auto-rows: 300px;
+grid-auto-column: 300px; 
+
+Grid
+Lines = Gap
+Tracks = Row and Columns
+Cells = 1 cell of Grid
+Container = Container of Grid
+Items = Items in grid
+
+
+grid-column : span 2; //Takes 2 grid columns
+
+grid-column-start: 2; //Line Starts at 1 
+grid-column-end : 4; //Line starts at 1
+
+grid-area:	2/	1 /	3/	3
+	 row start  col start  row end col end
+
+
+Bootstrap = External CSS Framework
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+*Note: Specify styles below link href of bootstrap to override bootstrap css.
+
+
+Breakpoints
+
+Small = col-sm-2 = mobile
+Medium = col-md-2 = Ipad
+Large = col-lg-2 = Laptop
+Extra Large = col-xl-2 = Desktop
+Extra Extra Large = col-xxl-2 = Widescreen TV
+
+Multiple Breakpoints
+
+col-sm-12 col-md-8 col-lg-4
+
+col-sm-12 on small
+col-md-8 on medium
+col-lg-4 on large
+
+Start on Largest breakpoint first
+
+Mix & Match
+
+col-2 col-4 col
+
+Boostrap Components
+
+Bootstrap4 data-toggle 
+Bootstrap5 data-bs-toggle
+
+Note: Use data-bs-toggle for bootstrap 5 code.
+
+Boostrap Free Icons
+https://icons.getbootstrap.com/
+
+Note: SVG Icons copied from bootstrap doesn't work because
+
+Utility - Spacing
+
+Property
+
+m- for margin
+p - for padding
+
+Sides
+
+t - margin/padding top
+b - margin/padding bottom
+s - margin/padding start (left)
+e - margin/padding end (right)
+x - margin/padding both left & right
+y - margin/padding both top & bottom
+blank - all sides
+
+Size
+
+0 = Eliminate margin/padding
+1 = Set spacer to .25
+2 = Set spacer to .5
+3 = Set spacer to 1
+4 = Set spacer to 1.5
+5 = Set spacer to 3
+auto = Set Margin to auto
+
+Ex: mt-5 = margin top 5
+    mb-2 = margin bottom 2
+
+
+Dark Mode
+<html lang="en" data-bs-theme="dark">
+
+Web Design
+
+Color Theory
+
+Red = Love, Energy, Intensity
+Yellow = Joy, Intellect, Attention
+Green = Freshness, Safety, Growth
+Blue = Stability, Trust, Serenity
+Purple = Royalty, Wealth, Femininity
+
+Combining Colors
+
+Analogous Colors = Colors close to each other
+
+* Not Good at Standing Out
+
+Complementary Colors = Opposite Colors, Stands Out
+
+* Do not style Text with complementary colors.
+
+Color Palettes
+https://color.adobe.com/create/color-wheel
+
+Color Palette Presets
+https://colorhunt.co/
+
+Typography
+
+1. Serif = has little feet
+
+* More Serious, Older
+
+Old Style = Older, Winery
+Transitional = Stable, Respectable
+Modern = Authoritative Modern
+
+2. Sans-serif = has perfect right angle;
+
+* More friendly, approachable
+
+Humanist = Highly Readable
+Grotesque = 
+
+
+Note: 
+
+* Do not use More than 2 Fonts
+
+
+Attention:
+
+1. Hierarchy - most important information are larger.
+
+Color = Brighter
+Font Size = Larger
+
+2. Layout
+
+Too long = too tedious
+Too short = to short
+
+ideal = 34 characters per line
+
+3. Alignment - Alignment should be consistent
+
+* Reduce Alignment Points in UI Design
+
+4. Whitespace - Space things out to make it look more professional/better
+
+5. Audience - Design for audience 
+
+UX Design
+
+1. Simplicity - Keep things simple, don't make content too dense.
+
+2. Consistency - Keep things consistent on design.
+
+3. Reading Patterns = 
+
+F - Pattern, Left to Right
+Z - Pattern, Left to Right, Diagonal Left, Left to Right
+
+5. All Platform Design - All Design should be web and mobile responsive.
