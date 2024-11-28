@@ -10,7 +10,7 @@ function Entry(props) {
         <span>{props.name}</span>
       </dt>
       <dd>
-        {props.meaning}
+        {props.meaning} 
       </dd>
     </div>
   );
